@@ -1,0 +1,8 @@
+rootProject.name = 'springX'
+
+include 'core'
+include 'web'
+include 'data'
+include 'security'
+include 'observability'
+include 'testing'
