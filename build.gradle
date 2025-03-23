@@ -1,0 +1,48 @@
+plugins {
+	id 'java-library'
+	id 'maven-publish'
+}
+
+allprojects {
+	group = 'dev.bnacar'
+	version = '0.1.0'
+
+	repositories {
+		mavenCentral()
+	}
+}
+
+subprojects {
+	apply plugin: 'java-library'
+	apply plugin: 'maven-publish'
+
+	sourceCompatibility = '17'
+	targetCompatibility = '17'
+
+	dependencies {
+		// Common dependencies for all modules - using Spring Boot 3.0.0 which requires Java 17
+		implementation 'org.springframework.boot:spring-boot-starter:3.0.0'
+		implementation 'org.springframework:spring-context:6.0.0'
+		implementation 'org.springframework:spring-aop:6.0.0'
+		implementation 'org.aspectj:aspectjweaver:1.9.9.1'
+
+		// Test dependencies
+		testImplementation 'org.springframework.boot:spring-boot-starter-test:3.0.0'
+		testImplementation 'org.junit.jupiter:junit-jupiter-api:5.9.0'
+		testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.9.0'
+		testImplementation 'org.mockito:mockito-core:4.8.0'
+		testImplementation 'org.mockito:mockito-junit-jupiter:4.8.0'
+	}
+
+	tasks.withType(Test) {
+		useJUnitPlatform()
+	}
+
+	publishing {
+		publications {
+			maven(MavenPublication) {
+				from components.java
+			}
+		}
+	}
+}
