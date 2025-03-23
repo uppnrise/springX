@@ -1,0 +1,6 @@
+dependencies {
+    // Core module specific dependencies
+    api 'org.springframework.boot:spring-boot-autoconfigure:3.0.0'
+    implementation 'org.springframework.boot:spring-boot-configuration-processor:3.0.0'
+    implementation 'org.slf4j:slf4j-api:2.0.5'
+}
