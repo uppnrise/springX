@@ -1,0 +1,6 @@
+dependencies {
+    // Web module specific dependencies
+    api project(':core')
+    implementation 'org.springframework.boot:spring-boot-starter-web:3.0.0'
+    implementation 'org.springframework:spring-webmvc:6.0.0'
+}
