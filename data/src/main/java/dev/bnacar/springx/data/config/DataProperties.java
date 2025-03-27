@@ -3,7 +3,7 @@ package dev.bnacar.springx.data.config;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 
 /**
- * Configuration properties for Spring Boost data features.
+ * Configuration properties for Spring X data features.
  */
 @ConfigurationProperties(prefix = "springx.data")
 public class DataProperties {

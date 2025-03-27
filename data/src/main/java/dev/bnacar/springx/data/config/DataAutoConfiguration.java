@@ -8,7 +8,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 /**
- * Auto-configuration for Spring Boost data features.
+ * Auto-configuration for Spring X data features.
  */
 @Configuration
 @EnableConfigurationProperties(DataProperties.class)
