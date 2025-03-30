@@ -1,6 +1,7 @@
 package dev.bnacar.springx.testing.runner;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
+import dev.bnacar.springx.testing.annotation.JsonTest;
 import org.junit.jupiter.api.extension.ExtensionContext;
 import org.junit.jupiter.api.extension.ParameterContext;
 import org.junit.jupiter.api.extension.ParameterResolver;
@@ -41,7 +42,8 @@ public class JsonTestParameterResolver implements ParameterResolver {
         return parameterType.equals(Object.class) ||
                 parameterType.equals(testClass) ||
                 parameterType.equals(JacksonTester.class) ||
-                parameterType.equals(ObjectMapper.class);
+                parameterType.equals(ObjectMapper.class) ||
+                parameterType.equals(getTestDtoClass(extensionContext));
     }
 
     @Override
@@ -54,6 +56,10 @@ public class JsonTestParameterResolver implements ParameterResolver {
 
         if (parameterType.equals(JacksonTester.class)) {
             return new JacksonTester<>(testClass, ResolvableType.forClass(testClass), objectMapper);
+        }
+
+        if (parameterType.equals(getTestDtoClass(extensionContext))) {
+            return createBasicTestObject();
         }
 
         // Create test object based on test type
@@ -71,11 +77,10 @@ public class JsonTestParameterResolver implements ParameterResolver {
         return createBasicTestObject();
     }
 
-    /**
-     * Creates a basic test object with typical values.
-     *
-     * @return a basic test object
-     */
+    private Class<?> getTestDtoClass(ExtensionContext extensionContext) {
+        return extensionContext.getRequiredTestMethod().getAnnotation(JsonTest.class).value();
+    }
+
     private Object createBasicTestObject() {
         try {
             Constructor<?> constructor = testClass.getDeclaredConstructor();
@@ -112,11 +117,6 @@ public class JsonTestParameterResolver implements ParameterResolver {
         }
     }
 
-    /**
-     * Creates a test object with null values.
-     *
-     * @return a test object with null values
-     */
     private Object createNullValuesTestObject() {
         try {
             Constructor<?> constructor = testClass.getDeclaredConstructor();
@@ -139,11 +139,6 @@ public class JsonTestParameterResolver implements ParameterResolver {
         }
     }
 
-    /**
-     * Creates a test object with empty collections.
-     *
-     * @return a test object with empty collections
-     */
     private Object createEmptyCollectionsTestObject() {
         try {
             Constructor<?> constructor = testClass.getDeclaredConstructor();
@@ -172,11 +167,6 @@ public class JsonTestParameterResolver implements ParameterResolver {
         }
     }
 
-    /**
-     * Creates a test object for case sensitivity testing.
-     *
-     * @return a test object for case sensitivity testing
-     */
     private Object createCaseSensitivityTestObject() {
         // For case sensitivity testing, we just use the basic test object
         return createBasicTestObject();
