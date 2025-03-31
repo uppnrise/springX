@@ -85,7 +85,7 @@ public class CoreIntegrationTest {
         }
 
         @Bean
-        public SpringXAutoConfiguration springBoostAutoConfiguration() {
+        public SpringXAutoConfiguration springXAutoConfiguration() {
             return new SpringXAutoConfiguration();
         }
     }
