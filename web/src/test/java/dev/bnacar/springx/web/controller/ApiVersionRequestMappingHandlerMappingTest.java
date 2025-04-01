@@ -4,15 +4,17 @@ import org.junit.jupiter.api.Test;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.servlet.mvc.condition.PatternsRequestCondition;
 import org.springframework.web.servlet.mvc.method.RequestMappingInfo;
 
 import java.lang.reflect.Method;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class ApiVersionRequestMappingHandlerMappingTest {
 
-    private ApiVersionRequestMappingHandlerMapping handlerMapping = new ApiVersionRequestMappingHandlerMapping();
+    private final ApiVersionRequestMappingHandlerMapping handlerMapping = new ApiVersionRequestMappingHandlerMapping();
 
     @Test
     public void testGetMappingForMethodWithApiVersion() throws NoSuchMethodException {
@@ -24,7 +26,10 @@ public class ApiVersionRequestMappingHandlerMappingTest {
 
         // Assert
         assertNotNull(mappingInfo);
-        assertTrue(mappingInfo.getPatternsCondition().getPatterns().contains("/v1/test"));
+
+        PatternsRequestCondition patternsCondition = mappingInfo.getPatternsCondition();
+        assertNotNull(patternsCondition);
+        assertTrue(patternsCondition.getPatterns().contains("/v1/test"));
     }
 
     @Test
@@ -37,7 +42,10 @@ public class ApiVersionRequestMappingHandlerMappingTest {
 
         // Assert
         assertNotNull(mappingInfo);
-        assertTrue(mappingInfo.getPatternsCondition().getPatterns().contains("/test"));
+
+        PatternsRequestCondition patternsCondition = mappingInfo.getPatternsCondition();
+        assertNotNull(patternsCondition);
+        assertTrue(patternsCondition.getPatterns().contains("/test"));
     }
 
     @ApiVersion("1")
