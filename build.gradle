@@ -43,6 +43,7 @@ subprojects {
 		publications {
 			gpr(MavenPublication) {
 				from(components.java)
+				artifactId = "springx-${project.name}"
 			}
 		}
 		repositories {
