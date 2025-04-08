@@ -13,7 +13,6 @@ import org.springframework.context.annotation.Configuration;
  */
 @Configuration
 @EnableConfigurationProperties(SpringXProperties.class)
-
 public class SpringXAutoConfiguration {
 
     /**
