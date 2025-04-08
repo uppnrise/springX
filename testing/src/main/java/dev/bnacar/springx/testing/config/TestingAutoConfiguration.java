@@ -31,7 +31,7 @@ public class TestingAutoConfiguration {
      * @return the JsonTestExtension bean
      */
     @Bean
-    @ConditionalOnProperty(name = "springx.testing.json-test.enabled", havingValue = "true", matchIfMissing = true)
+    @ConditionalOnProperty(name = "spring-x.testing.json-test.enabled", havingValue = "true", matchIfMissing = true)
     @ConditionalOnMissingBean(JsonTestExtension.class)
     public JsonTestExtension jsonTestExtension() {
         return new JsonTestExtension();

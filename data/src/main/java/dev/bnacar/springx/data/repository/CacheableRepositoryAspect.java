@@ -23,7 +23,7 @@ import java.util.concurrent.TimeUnit;
  */
 @Aspect
 @Component
-@ConditionalOnProperty(name = "springx.data.repository-caching.enabled", havingValue = "true", matchIfMissing = true)
+@ConditionalOnProperty(name = "spring-x.data.repository-caching.enabled", havingValue = "true", matchIfMissing = true)
 public class CacheableRepositoryAspect {
 
     private static final Logger logger = LoggerFactory.getLogger(CacheableRepositoryAspect.class);

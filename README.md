@@ -125,9 +125,9 @@ Spring X can be configured through your application.properties or application.ym
 
 ```properties
 # Enable/disable aspects
-springx.aop.log-execution-time.enabled=true
-springx.aop.retry.enabled=true
-springx.aop.throttle.enabled=true
+spring-x.aop.log-execution-time.enabled=true
+spring-x.aop.retry.enabled=true
+spring-x.aop.throttle.enabled=true
 
 # Additional configuration options will be available in future releases
 ```

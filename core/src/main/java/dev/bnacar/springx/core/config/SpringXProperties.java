@@ -5,7 +5,7 @@ import org.springframework.boot.context.properties.ConfigurationProperties;
 /**
  * Configuration properties for Spring X AOP features.
  */
-@ConfigurationProperties(prefix = "springx.aop")
+@ConfigurationProperties(prefix = "spring-x.aop")
 public class SpringXProperties {
 
     private final LogExecutionTimeProperties logExecutionTime = new LogExecutionTimeProperties();

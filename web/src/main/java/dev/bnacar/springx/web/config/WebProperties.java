@@ -5,7 +5,7 @@ import org.springframework.boot.context.properties.ConfigurationProperties;
 /**
  * Configuration properties for Spring X web features.
  */
-@ConfigurationProperties(prefix = "springx.web")
+@ConfigurationProperties(prefix = "spring-x.web")
 public class WebProperties {
 
     private final ApiVersioningProperties apiVersioning = new ApiVersioningProperties();

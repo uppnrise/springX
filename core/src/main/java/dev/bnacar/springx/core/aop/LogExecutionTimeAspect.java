@@ -18,7 +18,7 @@ import java.util.Arrays;
  */
 @Aspect
 @Component
-@ConditionalOnProperty(name = "springx.aop.log-execution-time.enabled", havingValue = "true", matchIfMissing = true)
+@ConditionalOnProperty(name = "spring-x.aop.log-execution-time.enabled", havingValue = "true", matchIfMissing = true)
 public class LogExecutionTimeAspect {
 
     /**

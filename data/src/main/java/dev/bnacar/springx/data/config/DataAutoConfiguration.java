@@ -31,7 +31,7 @@ public class DataAutoConfiguration {
      * @return the CacheableRepositoryAspect bean
      */
     @Bean
-    @ConditionalOnProperty(name = "springx.data.repository-caching.enabled", havingValue = "true", matchIfMissing = true)
+    @ConditionalOnProperty(name = "spring-x.data.repository-caching.enabled", havingValue = "true", matchIfMissing = true)
     @ConditionalOnMissingBean(CacheableRepositoryAspect.class)
     public CacheableRepositoryAspect cacheableRepositoryAspect() {
         return new CacheableRepositoryAspect();

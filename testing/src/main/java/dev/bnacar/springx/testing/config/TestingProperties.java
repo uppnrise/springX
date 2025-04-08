@@ -5,7 +5,7 @@ import org.springframework.boot.context.properties.ConfigurationProperties;
 /**
  * Configuration properties for Spring X testing features.
  */
-@ConfigurationProperties(prefix = "springx.testing")
+@ConfigurationProperties(prefix = "spring-x.testing")
 public class TestingProperties {
 
     private final JsonTestProperties jsonTest = new JsonTestProperties();

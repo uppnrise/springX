@@ -5,7 +5,7 @@ import org.springframework.boot.context.properties.ConfigurationProperties;
 /**
  * Configuration properties for Spring X data features.
  */
-@ConfigurationProperties(prefix = "springx.data")
+@ConfigurationProperties(prefix = "spring-x.data")
 public class DataProperties {
 
     private final RepositoryCachingProperties repositoryCaching = new RepositoryCachingProperties();

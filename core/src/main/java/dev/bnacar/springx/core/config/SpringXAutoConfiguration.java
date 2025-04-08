@@ -21,7 +21,7 @@ public class SpringXAutoConfiguration {
      * @return the LogExecutionTimeAspect bean
      */
     @Bean
-    @ConditionalOnProperty(name = "springx.aop.log-execution-time.enabled", havingValue = "true", matchIfMissing = true)
+    @ConditionalOnProperty(name = "spring-x.aop.log-execution-time.enabled", havingValue = "true", matchIfMissing = true)
     public LogExecutionTimeAspect logExecutionTimeAspect() {
         return new LogExecutionTimeAspect();
     }
@@ -32,7 +32,7 @@ public class SpringXAutoConfiguration {
      * @return the RetryAspect bean
      */
     @Bean
-    @ConditionalOnProperty(name = "springx.aop.retry.enabled", havingValue = "true", matchIfMissing = true)
+    @ConditionalOnProperty(name = "spring-x.aop.retry.enabled", havingValue = "true", matchIfMissing = true)
     public RetryAspect retryAspect() {
         return new RetryAspect();
     }
@@ -43,7 +43,7 @@ public class SpringXAutoConfiguration {
      * @return the ThrottleAspect bean
      */
     @Bean
-    @ConditionalOnProperty(name = "springx.aop.throttle.enabled", havingValue = "true", matchIfMissing = true)
+    @ConditionalOnProperty(name = "spring-x.aop.throttle.enabled", havingValue = "true", matchIfMissing = true)
     public ThrottleAspect throttleAspect() {
         return new ThrottleAspect();
     }

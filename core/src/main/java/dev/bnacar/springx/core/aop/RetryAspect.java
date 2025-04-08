@@ -21,7 +21,7 @@ import java.util.stream.Collectors;
  */
 @Aspect
 @Component
-@ConditionalOnProperty(name = "springx.aop.retry.enabled", havingValue = "true", matchIfMissing = true)
+@ConditionalOnProperty(name = "spring-x.aop.retry.enabled", havingValue = "true", matchIfMissing = true)
 public class RetryAspect {
 
     private static final Logger logger = LoggerFactory.getLogger(RetryAspect.class);

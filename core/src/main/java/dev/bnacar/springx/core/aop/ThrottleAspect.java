@@ -21,7 +21,7 @@ import java.util.concurrent.atomic.AtomicInteger;
  */
 @Aspect
 @Component
-@ConditionalOnProperty(name = "springx.aop.throttle.enabled", havingValue = "true", matchIfMissing = true)
+@ConditionalOnProperty(name = "spring-x.aop.throttle.enabled", havingValue = "true", matchIfMissing = true)
 public class ThrottleAspect {
 
     private static final Logger logger = LoggerFactory.getLogger(ThrottleAspect.class);
