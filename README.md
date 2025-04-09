@@ -27,9 +27,14 @@ Spring X is a utility library designed to enhance Spring Boot applications by pr
 ### Maven
 
 ```xml
+<repository>
+    <id>github-springx</id>
+    <url>https://maven.pkg.github.com/uppnrise/springx</url>
+</repository>
+
 <dependency>
     <groupId>dev.bnacar</groupId>
-    <artifactId>springx</artifactId>
+    <artifactId>springx-{submodule-name}</artifactId>
     <version>0.1.0</version>
 </dependency>
 ```
@@ -37,7 +42,11 @@ Spring X is a utility library designed to enhance Spring Boot applications by pr
 ### Gradle
 
 ```groovy
-implementation 'dev.bnacar:springx:0.1.0'
+repositories {
+    maven { url = uri("https://maven.pkg.github.com/uppnrise/springx") }
+}
+
+implementation 'dev.bnacar:springx-{submodule-name}:0.1.0'
 ```
 
 ## Usage Examples
@@ -45,6 +54,10 @@ implementation 'dev.bnacar:springx:0.1.0'
 ### Learn More About the Core Module
 
 For detailed usage instructions and examples, check out the [Core Module Documentation](core/README.md).
+
+### Real-World Examples
+
+For usage examples with real Spring Boot applications that use Spring X libraries, please refer to the [Spring X Examples Repository](https://github.com/uppnrise/springx-examples).
 
 ## Requirements
 
